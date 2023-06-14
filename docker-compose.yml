@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  redmine:
+    build: .
+    ports:
+      - 8080:3000
+    volumes:
+      - ./storage/docker_redmine-plugins:/usr/src/redmine/plugins
+      - ./storage/docker_redmine-themes:/usr/src/redmine/public/themes
+      - ./storage/docker_redmine-data:/usr/src/redmine/files
+    environment:
+      REDMINE_PLUGINS_MIGRATE: 'true'
+      REDMINE_DB_MYSQL: db
+      REDMINE_DB_PASSWORD: example
+      REDMINE_SECRET_KEY_BASE: supersecretkey
+    restart: always
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: redmine
