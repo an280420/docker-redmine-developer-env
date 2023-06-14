@@ -1,6 +1,7 @@
 # docker-redmine-developer-env
-Quick start redmine with developer environment
-Support Redmine 3.0-4.0 (Redmine 5. not support)
+Quick start redmine with developer environment.
+
+Support Redmine 3.0-4.0 (Redmine 5. not support).
 
 This repository contains a development environment for running Redmine in Docker. It includes a Docker Compose file and a Dockerfile to set up the necessary services and configurations.
 
